@@ -1,0 +1,56 @@
+/*PROBLEM STATEMENT
+Min and Max
+
+Congratulations on making up to this question. Let us give you a fairly simple array problem to solve. If you know how to iterate through the array, you will easily be able to solve this.
+The problem statement is simple- given N
+
+ elements, find the minimum and maximum numbers among those elements.
+Input format
+
+The first line contains test case T
+ denoting the number of test cases.
+Each test case consists of two lines,
+First-line contains N representing the length of the array.
+The second line contains N
+
+ space-separated integers.
+Output format
+
+For each test case on a new line, print minimum and maximum elements separated by space.
+Constraints
+
+1<=T<=5
+
+1<=N<107
+0<=A[i]<=107
+
+Time limit
+
+1
+ second*/
+ 
+import java.util.*;
+  import java.io.*;
+  
+  public class Main {
+    public static void main(String args[]) throws IOException {
+      
+      //write your code here
+      Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		int arrAns[]=new int[t];
+		while(t!=0){
+			int l=sc.nextInt();
+			int arr[]=new int[l];
+			for(int i=0;i<l;i++){
+				arr[i]=sc.nextInt();
+			}
+			Arrays.sort(arr);
+			System.out.print(arr[0]+" ");
+			System.out.println(arr[arr.length-1]);
+			t-=1;
+		}
+		sc.close();
+      
+    }
+  }
