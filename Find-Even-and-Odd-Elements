@@ -1,0 +1,69 @@
+/*PROBLEM STATEMENT
+Find Even and Odd elements
+
+Let's add more mathematics with arrays.
+You are given an array of size N
+, containing N
+
+ integers. PrepBuddy is asking you to print all the even elements in the first line and all odd elements in the second line.
+The array will contain at least one even and one odd element.
+Input Format
+
+First line contains integer N
+.
+Second line contains N
+
+ space-separated integers.
+Output Format
+
+In the first line print space-separated Even elements.
+In the first line print space-separated Odd elements.
+Constaints
+
+2<=N<=103
+
+1<=A[i]<=104
+
+Time limit
+
+0.50
+ second*/
+ 
+ //Code starts here
+ import java.util.*;
+  import java.io.*;
+  
+  public class Main {
+    public static void main(String args[]) throws IOException {
+      
+      //write your code here
+      Scanner sc=new Scanner(System.in);
+		int l=sc.nextInt();
+		int arr[]=new int[l];
+		for(int i=0;i<l;i++){
+			arr[i]=sc.nextInt();
+		}
+		List<Integer> listOdd = new ArrayList<>();
+		List<Integer> listEven = new ArrayList<>();
+		for(int i=0;i<arr.length;i++){
+			if (arr[i]%2==0){
+				listEven.add(arr[i]);
+			}else{
+				listOdd.add(arr[i]);
+			}
+		}
+		String evenOut="";
+		for (int i=0;i<listEven.size();i++){
+			evenOut=evenOut+listEven.get(i)+" ";
+		}
+		String oddOut="";
+		for (int i=0;i<listOdd.size();i++){
+			oddOut=oddOut+listOdd.get(i)+" ";
+		}
+
+		System.out.println(evenOut.substring(0,evenOut.length()-1));
+		System.out.println(oddOut.substring(0,oddOut.length()-1));
+		sc.close();
+      
+    }
+  }
