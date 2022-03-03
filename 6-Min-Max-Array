@@ -1,0 +1,45 @@
+/* PROBLEM STATEMENT 
+
+Maximum and minimum of an array.
+Write a function to return minimum and maximum in an array.
+
+*/
+
+//CODE Starts Here
+//RECURSIVE METHOD
+class Main {
+    public static void minmax(int[] arr, int len, int min, int max){
+        if(len==0){
+            if(arr[len]<min){
+                min=arr[len];
+            }
+            if(arr[len]>max){
+                max=arr[len];
+            }
+            System.out.println(min+" "+max);
+            return;
+        }
+        if(arr[len]<min){
+            min=arr[len];
+        }
+        if(arr[len]>max){
+            max=arr[len];
+        }
+        len-=1;
+        minmax(arr,len,min, max);
+    }
+
+    public static void main(String args[]) throws IOException {
+
+        //write your code here
+        Scanner sc=new Scanner(System.in);
+        int len=sc.nextInt();
+        int[] arr=new int[len];
+        for(int i=0;i<len;i++){
+            arr[i]=sc.nextInt();
+        }
+        len-=1;
+        int min=arr[len];int max=arr[len];
+        minmax(arr,len,min,max);
+    }
+}
