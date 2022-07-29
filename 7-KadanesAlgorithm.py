@@ -9,10 +9,14 @@ for i in range(0,n):
     test_arr.append(int(input()))
 
 def maxSum(arr):
-    sum=0
-    for i in range(0,len(arr)):
-        if arr[i]>=0:
-            sum+=arr[i]
-    return sum
+    cur_sum = 0
+        max_sum = arr[0]
+        for i in range(0,len(arr)):
+            cur_sum = cur_sum + arr[i]
+            if(max_sum<cur_sum):
+                max_sum = cur_sum
+            if(cur_sum<0):
+                cur_sum =0
+        return max_sum
 
 print(maxSum(test_arr))
